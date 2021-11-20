@@ -39,7 +39,7 @@ jobs:
             git config --global user.name AppVeyor
             git config --global user.email ci@appveyor.com
             echo "https://$GIT_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-            npx push-dir --dir=dist --branch=gh-pages --force --verbose
+            npx npm push-dir --dir=dist --branch=gh-pages --force --verbose
 
 workflows:
   # Below is the definition of your workflow.
