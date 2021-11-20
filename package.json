@@ -16,7 +16,8 @@
     "preshow:doc": "npm run doc",
     "show:doc": "live-server doc",
     "preshow:dist": "npm run build",
-    "show:dist": "live-server dist"
+    "show:dist": "live-server dist",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "author": "coursar",
   "license": "MIT",
