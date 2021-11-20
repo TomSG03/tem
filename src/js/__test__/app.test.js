@@ -1,5 +1,5 @@
-import chechApp from '../app';
+import demo from '../app';
 
 test('must return the received value', () => {
-  expect(chechApp('A')).toBe('A');
+  expect(demo('A')).toBe('A');
 });
