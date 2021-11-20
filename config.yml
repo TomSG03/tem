@@ -29,16 +29,6 @@ jobs:
       - run:
           name: Run tests
           command: yarn test
-  build_deploy:
-    executor: gh-pages/default
-    steps:
-      - checkout
-      - run: 
-          name: Run deploy
-          command: yarn build
-      - gh-pages/deploy:
-          setup-git: true
-          ssh-fingerprints: $GIT_TOKEN        
 
 workflows:
   # Below is the definition of your workflow.
