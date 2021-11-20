@@ -6,7 +6,7 @@ orbs:
   # The Node.js orb contains a set of prepackaged CircleCI configuration you can utilize
   # Orbs reduce the amount of configuration required for common tasks.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/node
-  node: circleci/node@4.7
+  node: circleci/node@14.17
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -41,10 +41,9 @@ jobs:
       - run:
           name: echo
           command: echo "https://$GIT_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-      - run: yarn add --dev push-dir
       - run:
-          name: yarn push-dir
-          command: yarn push-dir --dir=dist --branch=gh-pages --force --verbose
+          name: push-dir
+          command: npx push-dir --dir=dist --branch=gh-pages --force --verbose
 
 workflows:
   # Below is the definition of your workflow.
