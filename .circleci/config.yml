@@ -42,9 +42,8 @@ jobs:
           name: echo
           command: echo "https://$GIT_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
       - run:
-          name: npx npm push-dir
-          command: npx npm list
-          # command: npx npm push-dir --dir=dist --branch=gh-pages --force --verbose
+          name: npx yarn push-dir
+          command: npx yarn push-dir --dir=dist --branch=gh-pages --force --verbose
 
 workflows:
   # Below is the definition of your workflow.
