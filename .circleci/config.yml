@@ -29,7 +29,7 @@ jobs:
             git config --global user.email ci@circleci.com
       - run: git add dist -f
       - run: git commit -m "Initial dist subtree commit"  
-      - run: git subtree push --squash --prefix dist https://${GIT_TOKEN}@github.com/TomSG03/ahj-env2.git gh-pages
+      - run: git subtree --squash  push --prefix dist https://${GIT_TOKEN}@github.com/TomSG03/ahj-env2.git gh-pages
       # - run: git subtree push --prefix dist origin gh-pages 
       # - run:
       #     name: echo
