@@ -38,17 +38,18 @@ jobs:
       - run:
           name: Create gh-pages
           command: |
+            git config --global credential.helper store
             git config --global user.name CircleCI
             git config --global user.email ci@circleci.com
-      - run: git add dist -f
-      - run: git commit -m "Initial dist subtree commit"  
-      - run: git subtree push --prefix dist origin gh-pages 
-      # - run:
-      #     name: echo
-      #     command: echo "https://$GIT_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-      # - run:
-      #     name: push-dir
-      #     command: npx yarn push-dir --dir=dist --branch=gh-pages --force --verbose
+      # - run: git add dist -f
+      # - run: git commit -m "Initial dist subtree commit"  
+      # - run: git subtree push --prefix dist origin gh-pages 
+      - run:
+          name: echo
+          command: echo "https://$GIT_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+      - run:
+          name: push-dir
+          command: npx yarn push-dir --dir=dist --branch=gh-pages --force --verbose
       
 workflows:
   # Below is the definition of your workflow.
