@@ -50,7 +50,7 @@ jobs:
       - run:
           name: push-dir
           # command: npx yarn push-dir --dir=dist --branch=gh-pages --force --verbose
-            command: yarn deploy
+           command: yarn deploy
       
 workflows:
   # Below is the definition of your workflow.
