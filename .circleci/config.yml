@@ -27,16 +27,16 @@ jobs:
             git config --global credential.helper store
             git config --global user.name CircleCI
             git config --global user.email ci@circleci.com
-      - run: git add dist -f
-      - run: git commit -m "Initial dist subtree commit"  
-      - run: git subtree pull --prefix dist https://${GIT_TOKEN}@github.com/TomSG03/ahj-env2.git gh-pages
+      - run:
+          name: echo
+          command: echo "https://$GIT_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+      - run:
+          name: push-dir
+          command: yarn deploy
+      # - run: git add dist -f
+      # - run: git commit -m "Initial dist subtree commit"  
+      # - run: git subtree push --prefix dist https://${GIT_TOKEN}@github.com/TomSG03/ahj-env2.git gh-pages
       # - run: git subtree push --prefix dist origin gh-pages 
-      # - run:
-      #     name: echo
-      #     command: echo "https://$GIT_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-      # - run:
-      #     name: push-dir
-      #     command: yarn deploy
       
 workflows:
   sample:
