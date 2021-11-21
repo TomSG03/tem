@@ -16,7 +16,8 @@
     "preshow:doc": "npm run doc",
     "show:doc": "live-server doc",
     "preshow:dist": "npm run build",
-    "show:dist": "live-server dist"
+    "show:dist": "live-server dist",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --force --verbose"
   },
   "author": "coursar",
   "license": "MIT",
@@ -35,6 +36,7 @@
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^1.3.3",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "push-dir": "^0.4.1",
     "terser-webpack-plugin": "^5.0.3",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.1",
